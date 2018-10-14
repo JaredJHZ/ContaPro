@@ -23,8 +23,13 @@
               "src/assets",
               "src/manifest.json"
             ],
-            "styles": [
-              "src/styles.css"
+            "styles": [{
+              "input": "src/color.scss"
+            },
+              "src/styles.css",
+              {
+                "input": "src/hamburgers.css"
+              }
             ],
             "scripts": []
           },

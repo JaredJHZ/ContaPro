@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'contapro';
+  toggleOpen = false;
+
+  public open(drawer: any): void {
+    drawer.toggle();
+    this.toggleOpen = !this.toggleOpen;
+  }
+  
 }

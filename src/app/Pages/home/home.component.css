@@ -1,0 +1,25 @@
+.home {
+    margin-top: 30px;
+    overflow: hidden;
+    background-color: #00c853;
+}
+
+.img {
+    overflow: hidden;
+    height: 300px;
+}
+
+.menu {
+    width: 100%;
+    background-color: #283593;
+    margin-top: 25px;
+    border-radius: 10px;
+    color: white;
+}
+.tests {
+    text-align: center;
+}
+.tests button {
+    width: 170px;
+    margin: 10px;
+}

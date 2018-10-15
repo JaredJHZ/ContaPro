@@ -1,37 +1,32 @@
 <div class="main">
-
-  <div class="col-sm-12">
-      <mat-drawer-container autosize >
-          <mat-drawer #drawer mode="side">
-                <nav>
-                    hola
-                </nav>
+      <mat-drawer-container autosize style="height:100%;" >
+          <mat-drawer #drawer mode="side" class="side">
+            <app-navigation></app-navigation> 
           </mat-drawer>
   
           
           <mat-drawer-content class="main">
             <header id="header">
-              <mat-toolbar color="primary">
+              <mat-toolbar color="warn">
                   <button
                   (click)="open(drawer)"
                   [ngClass]="{'is-active':toggleOpen}"
-                  class="hamburger hamburger--slider" type="button">
+                  class="hamburger hamburger--slider out" type="button">
                       <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                       </span>
                     </button>
                 <h1 class="title">ContaPro</h1>
+                <img src="assets/img/1.png" class="logo" alt="">
               </mat-toolbar>
             </header>
   
   
             
-            <app-home></app-home>
+            <router-outlet></router-outlet>
   
           </mat-drawer-content>
   
   
-        </mat-drawer-container>      
-  </div>
-   
+        </mat-drawer-container>     
 </div>

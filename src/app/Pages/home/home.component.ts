@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -6,25 +7,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+user: any;
   tests = [
     {
-      nombre:'Fiscal'
+      nombre: 'Fiscal'
     },
     {
-      nombre:'Costos'
+      nombre: 'Costos'
     },
     {
-      nombre:'Auditorias'
+      nombre: 'Auditorias'
     },
     {
-      nombre:'Finanzas'
+      nombre: 'Finanzas'
     },
     {
-      nombre:'Contabilidad'
+      nombre: 'Contabilidad'
     }
-  ]
-  constructor() { }
+  ];
+  constructor(public _userService: UserService) {
+      this._userService.afAuth.authState
+        .subscribe(
+          (user) => {
+            this.user = user;
+            console.log(user);
+          }
+        )
+   }
 
   ngOnInit() {
   }

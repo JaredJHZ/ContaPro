@@ -1,0 +1,23 @@
+.nav{
+    display: block;
+}
+.nav li{
+    list-style: none;
+    margin-left: 15%;
+    margin-top:10%;
+    margin-bottom: 30%;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2em;
+    outline: none;
+}
+
+.nav li:hover{
+    color: #4443BB;
+}
+
+
+.active{
+    color: #4443BB !important;
+}

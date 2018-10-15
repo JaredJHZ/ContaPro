@@ -1,7 +1,7 @@
 .main {
     width: 100%;
     height: 100%;
-    background-color: #00c853;
+    background-color: #ffa000;
     overflow: hidden;
 }
 
@@ -13,4 +13,32 @@
     color: white;
     margin-left: 15%;
     font-size: 30px;
+}
+
+.side {
+    background-color: #c67100;
+    overflow: hidden;
+    margin: 0;
+    width: 30%;
+    height: 100%;
+}
+
+.logo {
+    width: 70px;
+    margin-left: 20px;
+}
+
+.out {
+    outline: none;
+}
+
+@media (min-width: 1000px) and (min-height: 650px) {
+    .side {
+       width: 10%;
+    }
+
+    .title {
+        margin: auto;
+    }
+
 }

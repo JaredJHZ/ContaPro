@@ -1,7 +1,6 @@
 .home {
     margin-top: 30px;
     overflow: hidden;
-    background-color: #00c853;
 }
 
 .img {
@@ -10,7 +9,8 @@
 }
 
 .menu {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     background-color: #283593;
     margin-top: 25px;
     border-radius: 10px;
@@ -20,6 +20,19 @@
     text-align: center;
 }
 .tests button {
-    width: 170px;
-    margin: 10px;
+    width: 150px;
+    margin: 5px;
+}
+
+@media (min-width: 1000px) and (min-height: 650px) {
+    .img {
+        height: 600px;
+        width: 80%;
+        margin: auto;
+    }
+    .menu {
+        width: 15%;
+        height: 30%;
+    }
+
 }

@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCvi_uJ0hDX8FMp23b4d93ktv8yqPIuwoo',
+    authDomain: 'contapro-68088.firebaseapp.com',
+    databaseURL: 'https://contapro-68088.firebaseio.com',
+    projectId: 'contapro-68088',
+    storageBucket: 'contapro-68088.appspot.com',
+    messagingSenderId: '21619580994'
+  }
 };
 
 /*

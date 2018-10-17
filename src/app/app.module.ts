@@ -13,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 // routes
 import { routes } from './routes';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { routes } from './routes';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

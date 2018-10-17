@@ -5,13 +5,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from '../Material/material.module';
 import { ComponentsModule } from '../Components/components.module';
 import { LoginComponent } from '../Pages/login/login.component';
+import { QuizComponent } from '../Pages/quiz/quiz.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
-  declarations: [HomeComponent, LoginComponent],
+  declarations: [HomeComponent, LoginComponent, QuizComponent],
   exports: [HomeComponent]
 })
 export class PagesModule { }

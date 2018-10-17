@@ -35,7 +35,7 @@
             </div>         
         <div class="tests">
             <h3>{{user.displayName}} elige el test a aplicar</h3>
-                <button *ngFor="let test of tests" mat-raised-button color="accent">{{test.nombre}}</button>
+                <button [routerLink]="['/quiz',test.nombre]" *ngFor="let test of tests" mat-raised-button color="accent">{{test.nombre}}</button>
         </div>         
     </div>
 </div>    

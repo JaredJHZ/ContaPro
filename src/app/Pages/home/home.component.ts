@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/Services/user.service';
+import { QuizService } from 'src/app/Services/quiz.service';
 
 @Component({
   selector: 'app-home',
@@ -8,31 +9,19 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class HomeComponent implements OnInit {
 user: any;
-  tests = [
-    {
-      nombre: 'Fiscal'
-    },
-    {
-      nombre: 'Costos'
-    },
-    {
-      nombre: 'Auditorias'
-    },
-    {
-      nombre: 'Finanzas'
-    },
-    {
-      nombre: 'Contabilidad'
-    }
-  ];
-  constructor(public _userService: UserService) {
+  tests = [];
+  constructor(public _userService: UserService, public _testService: QuizService) {
       this._userService.afAuth.authState
         .subscribe(
           (user) => {
             this.user = user;
-            console.log(user);
           }
-        )
+        );
+      this._testService.getTests().then(
+        (tests) => {
+          this.tests = tests;
+        }
+      );
    }
 
   ngOnInit() {

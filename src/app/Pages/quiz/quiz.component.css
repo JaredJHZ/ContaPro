@@ -1,0 +1,54 @@
+.titulo {
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+}
+
+.pregunta {
+ margin: auto;   
+}
+
+.respuestas{
+    margin:5px;
+    display: block;
+    height: 126px;
+}
+
+.respuestas span{
+    margin: 10px 10px;
+    display: block;
+}
+
+.button {
+    width: 95%;
+    margin-left:2.5%;
+    margin-right: 2.5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+
+.marcador {
+    text-align: center;
+}
+
+.terminado {
+    text-align: center;
+    color: white;
+}
+
+.card {
+    height: 218px;
+}
+
+@media (min-width: 1000px) and (min-height: 650px) {
+    .card {
+        height: 300px;
+        width: 500px;
+        margin-left: 35%;
+    }
+    .respuestas{
+        margin-left: 35%;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,38 @@
+<div class="titulo">
+  <h4>Quiz de {{nombre}}</h4>
+</div>
+<div *ngIf="!terminado" class="content">
+  <div class="pregunta">
+    <mat-card class="card" *ngIf="pregunta">
+      <p>{{pregunta}}</p>
+    </mat-card>
+    <div class="buttons">
+  </div>
+  
+  <div class="respuestas">
+    <span *ngFor="let respuesta of respuestas; let i = index">
+      {{i+1 }}){{ respuesta.respuesta}}
+    </span>  
+  </div>
+  
+  <button (click)="siguientePregunta(respuesta)" class="button"  *ngFor="let respuesta of respuestas; let i = index;" mat-raised-button color="accent" >
+    {{i+1}}
+  </button>
+
+  <div class="marcador">
+    <h5>Pregunta {{contador}}/5</h5>
+    <h4>Score:{{score}}</h4>
+  </div>
+</div>
+
+</div>
+
+<div *ngIf="terminado" class="terminado">
+  <h3>Felicitaciones tu puntaje es: </h3>
+  <h4>{{score}}</h4>
+  <h3>Respuestas correctas</h3>
+  <h4>{{score * 5 / 100}}</h4>
+  <button [routerLink]="['/home']" mat-raised-button color="warn">
+    Volver
+  </button>
+</div>

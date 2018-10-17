@@ -9,6 +9,7 @@ import { QuizService } from 'src/app/Services/quiz.service';
 })
 export class HomeComponent implements OnInit {
 user: any;
+loading = true;
   tests = [];
   constructor(public _userService: UserService, public _testService: QuizService) {
       this._userService.afAuth.authState
@@ -20,6 +21,7 @@ user: any;
       this._testService.getTests().then(
         (tests) => {
           this.tests = tests;
+          this.loading = false;
         }
       );
    }

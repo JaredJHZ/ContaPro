@@ -1,4 +1,4 @@
-<div *ngIf="user">
+<div *ngIf="user && !loading">
   <div class="home">
     <h1 style="text-align:center">Bienvenido</h1>
         <div #carrousel id="carouselExampleIndicators" class="carousel slide img" data-ride="carousel">
@@ -28,7 +28,7 @@
                 </a>
         </div>
 </div>
-<div class="row">
+<div *ngIf="!loading" class="row">
     <div class="col-sm-12">
             <div class="menu">
                     <h1 style="text-align:center">ContaPro</h1>
@@ -43,6 +43,9 @@
 </div>
 
 
-<div *ngIf="!user">
+<div *ngIf="!user && !loading">
     <h1>Inicie sesión para realizar el test!</h1>
+</div>
+<div class="loading">
+    <app-loading *ngIf="loading"></app-loading>
 </div>

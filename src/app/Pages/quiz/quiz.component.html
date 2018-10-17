@@ -1,7 +1,7 @@
 <div class="titulo">
   <h4>Quiz de {{nombre}}</h4>
 </div>
-<div *ngIf="!terminado" class="content">
+<div *ngIf="!terminado && !loading" class="content">
   <div class="pregunta">
     <mat-card class="card" *ngIf="pregunta">
       <p>{{pregunta}}</p>
@@ -32,7 +32,11 @@
   <h4>{{score}}</h4>
   <h3>Respuestas correctas</h3>
   <h4>{{score * 5 / 100}}</h4>
-  <button [routerLink]="['/home']" mat-raised-button color="warn">
+  <button [routerLink]="['/home']" mat-raised-button color="accent">
     Volver
   </button>
+</div>
+
+<div class="loading">
+  <app-loading *ngIf="loading"></app-loading>
 </div>

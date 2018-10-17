@@ -12,7 +12,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     BrowserAnimationsModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    ComponentsModule
   ],
   declarations: [HomeComponent, LoginComponent, QuizComponent],
   exports: [HomeComponent]

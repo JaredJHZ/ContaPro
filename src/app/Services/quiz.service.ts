@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference} from '@angular/fire/firestore';
 import { reject } from 'q';
-import { promise } from 'protractor';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +8,6 @@ export class QuizService {
 
   tests: AngularFirestoreCollection<any>;
   preguntas: AngularFirestoreCollection<any>;
-  
 
   constructor(
     public afs: AngularFirestore
@@ -32,22 +30,23 @@ export class QuizService {
 
   public async getQuiz(test: string): Promise<any> {
     const id = await this.getIdTest(test);
-    console.log(id);
     const ref = this.afs.collection<any>('test').doc(id).ref;
     this.preguntas = this.afs.collection<any>('preguntas');
-    let preguntas = [];
+    const preguntas = [];
     // tslint:disable-next-line:no-shadowed-variable
     return new Promise( (resolve, reject) => {
-      this.preguntas.ref.where('id_test', '==', ref )
+      const query = this.preguntas.ref.where('id_test', '==', ref )
         .get()
         .then(
-          (query) => {
-            query.forEach(
+          (all) => {
+            all.forEach(
               (doc) => {
+
                 const pregunta = {
                   pregunta: doc.data().pregunta,
                   respuestas: null
                 };
+
                 this.afs.collection('preguntas').doc(doc.id).collection('respuestas')
                 .get()
                 .subscribe(

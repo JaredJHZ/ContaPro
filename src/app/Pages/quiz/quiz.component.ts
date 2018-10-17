@@ -11,7 +11,7 @@ export class QuizComponent implements OnInit {
   nombre: string;
   seleccionadas: number[] = [];
   respuestas = [];
-  loading = false;
+  loading = true;
   pregunta: string ;
   contador = 1;
   score = 0;
@@ -46,7 +46,6 @@ export class QuizComponent implements OnInit {
    }
 
    private siguientePregunta(respuesta: any) {
-     console.log(respuesta);
      if (respuesta.correcta) {
        this.score += 20;
      }
@@ -61,6 +60,7 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.getPregunta();
+      this.loading = false;
     }, 1500);
   }
 
